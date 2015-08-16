@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.wonderfulrobot.com/schema/mule/klog"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:mule="http://www.mulesoft.org/schema/mule/core"
+            xmlns:validation="http://www.mulesoft.org/schema/mule/validation"
+            xmlns:mxml="http://www.mulesoft.org/schema/mule/xml"
+            xmlns:schemadoc="http://www.mulesoft.org/schema/mule/schemadoc"
+            targetNamespace="http://www.wonderfulrobot.com/schema/mule/klog"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/core"
+                schemaLocation="http://www.mulesoft.org/schema/mule/core/3.7/mule.xsd"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/schemadoc"
+                schemaLocation="http://www.mulesoft.org/schema/mule/schemadoc/3.7/mule-schemadoc.xsd"/>
+    <xsd:import namespace="http://www.mulesoft.org/schema/mule/validation"
+                schemaLocation="http://www.mulesoft.org/schema/mule/validation/3.7/mule-validation.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            The Kenny Loggings module to provide a customisable component for logging
+        </xsd:documentation>
+
+        <xsd:appinfo>
+            <schemadoc:short-name>klog</schemadoc:short-name>
+            <schemadoc:page-title>Kenny Loggings Module</schemadoc:page-title>
+
+            <schemadoc:additional-documentation where="after-common-elements">
+            </schemadoc:additional-documentation>
+
+            <schemadoc:additional-documentation where="after-specific-elements">
+            </schemadoc:additional-documentation>
+        </xsd:appinfo>
+    </xsd:annotation>
+
+<xsd:element name="klogger" type="loggerType" substitutionGroup="abstract-observer-message-processor">
+<xsd:annotation>
+<xsd:documentation>
+Performs logging using an expression that determines what should be logged. By default the current messages is logged using the DEBUG level to the 'org.mule.api.processor.LoggerMessageProcessor' category but the level and category can both be configured to suit your needs.
+</xsd:documentation>
+</xsd:annotation>
+</xsd:element>
+<xsd:complexType name="loggerType">
+<xsd:complexContent>
+<xsd:extension base="abstractObserverMessageProcessorType">
+<xsd:attribute name="message" type="xsd:string" use="optional">
+<xsd:annotation>
+<xsd:documentation>
+Message that will be logged. Embedded expressions can be used to extract value from the current message. If no message is specified then the current message is used.
+</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+<xsd:attribute name="level" use="optional">
+<xsd:annotation>
+<xsd:documentation>The logging level to be used. Default is DEBUG.</xsd:documentation>
+</xsd:annotation>
+<xsd:simpleType>
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="ERROR"/>
+<xsd:enumeration value="WARN"/>
+<xsd:enumeration value="INFO"/>
+<xsd:enumeration value="DEBUG"/>
+<xsd:enumeration value="TRACE"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:attribute>
+<xsd:attribute name="category" type="xsd:string" use="optional">
+<xsd:annotation>
+<xsd:documentation>The log category to be used</xsd:documentation>
+</xsd:annotation>
+</xsd:attribute>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+
+
+</xsd:schema>

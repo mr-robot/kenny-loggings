@@ -27,11 +27,11 @@ public class LoggingHandlerTestCase extends FunctionalTestCase {
 	 */
 	//@Test
 	public void testBasicConfiguration() throws Exception {
-		KLog log = (KLog) muleContext.getRegistry().lookupObject(KLog.class);
-		log.setMuleContext(muleContext);
-		log.initialise();
+		//KLog log = (KLog) muleContext.getRegistry().lookupObject(KLog.class);
+		//log.setMuleContext(muleContext);
+		//log.initialise();
 		
-		assertNotNull(log);
+		//assertNotNull(log);
 	}
 
 	 protected String getConfigResources()

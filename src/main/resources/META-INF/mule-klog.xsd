@@ -2,8 +2,6 @@
 <xsd:schema xmlns="http://www.wonderfulrobot.com/schema/mule/klog"
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:mule="http://www.mulesoft.org/schema/mule/core"
-            xmlns:validation="http://www.mulesoft.org/schema/mule/validation"
-            xmlns:mxml="http://www.mulesoft.org/schema/mule/xml"
             xmlns:schemadoc="http://www.mulesoft.org/schema/mule/schemadoc"
             targetNamespace="http://www.wonderfulrobot.com/schema/mule/klog"
             elementFormDefault="qualified"
@@ -14,8 +12,6 @@
                 schemaLocation="http://www.mulesoft.org/schema/mule/core/3.7/mule.xsd"/>
     <xsd:import namespace="http://www.mulesoft.org/schema/mule/schemadoc"
                 schemaLocation="http://www.mulesoft.org/schema/mule/schemadoc/3.7/mule-schemadoc.xsd"/>
-    <xsd:import namespace="http://www.mulesoft.org/schema/mule/validation"
-                schemaLocation="http://www.mulesoft.org/schema/mule/validation/3.7/mule-validation.xsd"/>
 
     <xsd:annotation>
         <xsd:documentation>
@@ -34,7 +30,7 @@
         </xsd:appinfo>
     </xsd:annotation>
 
-<xsd:element name="klogger" type="loggerType" substitutionGroup="abstract-observer-message-processor">
+<xsd:element name="klogger" type="loggerType" substitutionGroup="mule:abstract-observer-message-processor">
 <xsd:annotation>
 <xsd:documentation>
 Performs logging using an expression that determines what should be logged. By default the current messages is logged using the DEBUG level to the 'org.mule.api.processor.LoggerMessageProcessor' category but the level and category can both be configured to suit your needs.
@@ -43,7 +39,7 @@ Performs logging using an expression that determines what should be logged. By d
 </xsd:element>
 <xsd:complexType name="loggerType">
 <xsd:complexContent>
-<xsd:extension base="abstractObserverMessageProcessorType">
+<xsd:extension base="mule:abstractObserverMessageProcessorType">
 <xsd:attribute name="message" type="xsd:string" use="optional">
 <xsd:annotation>
 <xsd:documentation>

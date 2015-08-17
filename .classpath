@@ -19,7 +19,7 @@
   <classpathentry kind="var" path="M2_REPO/com/github/jnr/jffi/1.2.5/jffi-1.2.5.jar"/>
   <classpathentry kind="var" path="M2_REPO/junit/junit/4.8.2/junit-4.8.2.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/mina/mina-core/2.0.4/mina-core-2.0.4.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/mockito/mockito-all/1.8.2/mockito-all-1.8.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mockito/mockito-all/1.9.5/mockito-all-1.9.5.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mule/tools/devkit/mule-devkit-annotations/3.5.3/mule-devkit-annotations-3.5.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/mule/modules/mule-interceptor-module/3.7.0-RC2/mule-interceptor-module-3.7.0-RC2.jar"/>

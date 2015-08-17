@@ -10,14 +10,14 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
 http://www.wonderfulrobot.com/schema/mule/klog http://www.wonderfulrobot.com/schema/mule/klog/mule-klog.xsd">
     <flow name="flow-config-testFlow">
-        <vm:inbound-endpoint exchange-pattern="one-way"  doc:name="VM" path="TEST_LOG_IN"/>
-        <logger level="INFO" doc:name="Logger"/>
-        <vm:outbound-endpoint exchange-pattern="one-way"  doc:name="VM" path="TEST_LOG_OUT"/>
+        <vm:inbound-endpoint exchange-pattern="one-way"  doc:name="Input VM" path="TEST_LOG_IN"/>
+        <logger level="INFO" doc:name="Default Logger"/>
+        <vm:outbound-endpoint exchange-pattern="one-way"  doc:name="Output VM" path="TEST_LOG_OUT"/>
     </flow>
         <flow name="flow-config-testFlow-klog">
-        <vm:inbound-endpoint exchange-pattern="one-way"  doc:name="VM" path="TEST_KLOG_IN"/>
-        <klog:klogger level="INFO" doc:name="Logger"/>
-        <vm:outbound-endpoint exchange-pattern="one-way"  doc:name="VM" path="TEST_KLOG_OUT"/>
+        <vm:inbound-endpoint exchange-pattern="one-way"  doc:name="Input VM" path="TEST_KLOG_IN"/>
+        <klog:klogger level="INFO" doc:name="KLogger"/>
+        <vm:outbound-endpoint exchange-pattern="one-way"  doc:name="Output VM" path="TEST_KLOG_OUT"/>
     </flow>
 
 </mule>

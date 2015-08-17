@@ -10,6 +10,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import org.mockito.verification.VerificationMode;
 import org.mule.api.MuleEvent;
 import org.mule.api.MuleMessage;
 import org.mule.api.expression.ExpressionManager;
@@ -17,7 +18,6 @@ import org.mule.tck.junit4.AbstractMuleTestCase;
 import org.apache.commons.logging.Log;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
-import org.mockito.internal.verification.api.VerificationMode;
 
 import com.wonderfulrobot.kennyloggings.KLog;
 

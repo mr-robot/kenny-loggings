@@ -1,13 +1,13 @@
 package com.wonderfulrobot.kennyloggings;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mule.tck.junit4.FunctionalTestCase;
 
-import com.wonderfulrobot.kennyloggings.KLog;
 
+import com.wonderfulrobot.kennyloggings.KLog;
 
 public class LoggingHandlerTestCase extends FunctionalTestCase {
 	
@@ -21,17 +21,17 @@ public class LoggingHandlerTestCase extends FunctionalTestCase {
 
 	/**
 	 * 
-	 * Tests that the logging module exists
+	 * Tests that the logging module exists, the object is successfully loaded as part of the flow and is accessible
 	 * 
 	 * @throws Exception
 	 */
-	//@Test
+	@Test
 	public void testBasicConfiguration() throws Exception {
-		//KLog log = (KLog) muleContext.getRegistry().lookupObject(KLog.class);
-		//log.setMuleContext(muleContext);
-		//log.initialise();
+		KLog log = (KLog) muleContext.getRegistry().lookupObject(KLog.class);
+		log.setMuleContext(muleContext);
+		log.initialise();
 		
-		//assertNotNull(log);
+		assertNotNull(log);
 	}
 
 	 protected String getConfigResources()

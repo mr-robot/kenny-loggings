@@ -10,6 +10,8 @@ import com.wonderfulrobot.kennyloggings.KLog;
 
 /**
  * @author beast
+ * 
+ * NamespaceHandler for Configuration of KLogger
  *
  */
 public class KLogNamespaceHandler extends NamespaceHandlerSupport {
@@ -19,7 +21,7 @@ public class KLogNamespaceHandler extends NamespaceHandlerSupport {
 	 */
 	@Override
 	public void init() {
-		registerBeanDefinitionParser("logger", new ChildDefinitionParser("messageProcessor",KLog.class));
+		registerBeanDefinitionParser("klogger", new ChildDefinitionParser("messageProcessor",KLog.class));
 	}
 
 }
